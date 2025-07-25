@@ -11,7 +11,7 @@ Globals:
     Environment:
       Variables:
         ENV: "prod"
-        ALLOWED_ORIGINS: "https://your-frontend-domain.com"
+        ALLOWED_ORIGINS: "https://dma-backtester.vercel.app"
 
 Resources:
   FastApiFunction:
@@ -30,7 +30,7 @@ Resources:
       Environment:
         Variables:
           ENV: "prod"
-          ALLOWED_ORIGINS: "https://your-frontend-domain.com"
+          ALLOWED_ORIGINS: "https://dma-backtester.vercel.app"
 
 Outputs:
   FastApiApi:

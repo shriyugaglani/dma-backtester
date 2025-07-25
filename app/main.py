@@ -40,7 +40,7 @@ origins = [
     "http://localhost:3000",      # React dev server
     "http://localhost:5173",      # Vite dev server
     "http://localhost:8000",      # Alternative dev port
-    "https://your-frontend-domain.com",  # Production frontend (update this)
+    "https://dma-backtester.vercel.app",  # Production frontend
 ]
 
 # Allow environment variable override
