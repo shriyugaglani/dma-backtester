@@ -2,6 +2,8 @@
 
 A FastAPI application for backtesting Simple Moving Average (SMA) crossover trading strategies, deployed on AWS Lambda using SAM.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Features
 
 - **SMA Crossover Strategy**: Implements a simple moving average crossover trading strategy
@@ -139,4 +141,5 @@ Once deployed, visit:
 5. Submit a pull request
 
 ## License
-MIT License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
