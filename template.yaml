@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: FastAPI application deployed with AWS SAM and Mangum.
+
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: python3.11
+    Architectures:
+      - x86_64
+    Environment:
+      Variables:
+        ENV: "prod"
+        ALLOWED_ORIGINS: "https://your-frontend-domain.com"
+
+Resources:
+  FastApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: app/
+      Handler: main.handler
+      Runtime: python3.11
+      MemorySize: 512
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+      Environment:
+        Variables:
+          ENV: "prod"
+          ALLOWED_ORIGINS: "https://your-frontend-domain.com"
+
+Outputs:
+  FastApiApi:
+    Description: "API Gateway endpoint URL for FastAPI app"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  FastApiFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt FastApiFunction.Arn
